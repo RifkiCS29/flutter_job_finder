@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:job_finder/data/models/job_model.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
 
@@ -8,31 +9,31 @@ class ChooseJobsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> jobOptions = [
-      {
-        'name': 'Design',
-        'assets': Assets.png.designer.path,
-      },
-      {
-        'name': 'Engineer',
-        'assets': Assets.png.engineer.path,
-      },
-      {
-        'name': 'Programming',
-        'assets': Assets.png.programmer.path,
-      },
-      {
-        'name': 'Medical',
-        'assets': Assets.png.medical.path,
-      },
-      {
-        'name': 'Marketing',
-        'assets': Assets.png.marketing.path,
-      },
-      {
-        'name': 'Legal',
-        'assets': Assets.png.legal.path,
-      },
+    List<JobModel> jobOptions = [
+      JobModel(
+        name: 'Design',
+        assets: Assets.png.designer.path,
+      ),
+      JobModel(
+        name: 'Engineer',
+        assets: Assets.png.engineer.path,
+      ),
+      JobModel(
+        name: 'Programming',
+        assets: Assets.png.programmer.path,
+      ),
+      JobModel(
+        name: 'Medical',
+        assets: Assets.png.medical.path,
+      ),
+      JobModel(
+        name: 'Marketing',
+        assets: Assets.png.marketing.path,
+      ),
+      JobModel(
+        name: 'Legal',
+        assets: Assets.png.legal.path,
+      ),
     ];
 
     return Scaffold(
@@ -67,8 +68,7 @@ class ChooseJobsPage extends StatelessWidget {
               shrinkWrap: true,
               itemBuilder: (BuildContext context, int index) {
                 return JobOption(
-                  name: jobOptions[index]['name'],
-                  asset: jobOptions[index]['assets'],
+                  job: jobOptions[index],
                 );
               },
             ),
@@ -117,12 +117,10 @@ class ChooseJobsPage extends StatelessWidget {
 class JobOption extends StatefulWidget {
   const JobOption({
     super.key,
-    required this.name,
-    required this.asset,
+    required this.job,
   });
 
-  final String name;
-  final String asset;
+  final JobModel job;
 
   @override
   State<JobOption> createState() => _JobOptionState();
@@ -167,14 +165,14 @@ class _JobOptionState extends State<JobOption> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    widget.asset,
+                    widget.job.assets ?? Assets.png.designer.path,
                     height: 40,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    widget.name,
+                    widget.job.name ?? 'Job',
                     style: blackTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: semiBold,

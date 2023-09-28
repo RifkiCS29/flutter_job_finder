@@ -15,8 +15,17 @@ class $AssetsPngGen {
   /// File path: assets/png/designer.png
   AssetGenImage get designer => const AssetGenImage('assets/png/designer.png');
 
+  /// File path: assets/png/elux.png
+  AssetGenImage get elux => const AssetGenImage('assets/png/elux.png');
+
   /// File path: assets/png/engineer.png
   AssetGenImage get engineer => const AssetGenImage('assets/png/engineer.png');
+
+  /// File path: assets/png/flip.png
+  AssetGenImage get flip => const AssetGenImage('assets/png/flip.png');
+
+  /// File path: assets/png/gojek.png
+  AssetGenImage get gojek => const AssetGenImage('assets/png/gojek.png');
 
   /// File path: assets/png/introduction.png
   AssetGenImage get introduction => const AssetGenImage('assets/png/introduction.png');
@@ -33,8 +42,14 @@ class $AssetsPngGen {
   /// File path: assets/png/programmer.png
   AssetGenImage get programmer => const AssetGenImage('assets/png/programmer.png');
 
+  /// File path: assets/png/tokped.png
+  AssetGenImage get tokped => const AssetGenImage('assets/png/tokped.png');
+
+  /// File path: assets/png/traveloka.png
+  AssetGenImage get traveloka => const AssetGenImage('assets/png/traveloka.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [designer, engineer, introduction, legal, marketing, medical, programmer];
+  List<AssetGenImage> get values => [designer, elux, engineer, flip, gojek, introduction, legal, marketing, medical, programmer, tokped, traveloka];
 }
 
 class $AssetsSvgGen {
@@ -58,14 +73,8 @@ class $AssetsSvgGen {
   /// File path: assets/svg/chat_inactive.svg
   String get chatInactive => 'assets/svg/chat_inactive.svg';
 
-  /// File path: assets/svg/elux.svg
-  String get elux => 'assets/svg/elux.svg';
-
-  /// File path: assets/svg/flip.svg
-  String get flip => 'assets/svg/flip.svg';
-
-  /// File path: assets/svg/gojek.svg
-  String get gojek => 'assets/svg/gojek.svg';
+  /// File path: assets/svg/clock.svg
+  String get clock => 'assets/svg/clock.svg';
 
   /// File path: assets/svg/home_active.svg
   String get homeActive => 'assets/svg/home_active.svg';
@@ -79,17 +88,11 @@ class $AssetsSvgGen {
   /// File path: assets/svg/search.svg
   String get search => 'assets/svg/search.svg';
 
-  /// File path: assets/svg/tokped.svg
-  String get tokped => 'assets/svg/tokped.svg';
-
-  /// File path: assets/svg/traveloka.svg
-  String get traveloka => 'assets/svg/traveloka.svg';
-
   /// File path: assets/svg/user_incative.svg
   String get userIncative => 'assets/svg/user_incative.svg';
 
   /// List of all assets
-  List<String> get values => [apply, arrowRight, bookmark, bookmarked, candle, chatInactive, elux, flip, gojek, homeActive, jobInactive, notification, search, tokped, traveloka, userIncative];
+  List<String> get values => [apply, arrowRight, bookmark, bookmarked, candle, chatInactive, clock, homeActive, jobInactive, notification, search, userIncative];
 }
 
 class Assets {
