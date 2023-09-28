@@ -58,6 +58,15 @@ class $AssetsSvgGen {
   /// File path: assets/svg/chat_inactive.svg
   String get chatInactive => 'assets/svg/chat_inactive.svg';
 
+  /// File path: assets/svg/elux.svg
+  String get elux => 'assets/svg/elux.svg';
+
+  /// File path: assets/svg/flip.svg
+  String get flip => 'assets/svg/flip.svg';
+
+  /// File path: assets/svg/gojek.svg
+  String get gojek => 'assets/svg/gojek.svg';
+
   /// File path: assets/svg/home_active.svg
   String get homeActive => 'assets/svg/home_active.svg';
 
@@ -67,11 +76,20 @@ class $AssetsSvgGen {
   /// File path: assets/svg/notification.svg
   String get notification => 'assets/svg/notification.svg';
 
+  /// File path: assets/svg/search.svg
+  String get search => 'assets/svg/search.svg';
+
+  /// File path: assets/svg/tokped.svg
+  String get tokped => 'assets/svg/tokped.svg';
+
+  /// File path: assets/svg/traveloka.svg
+  String get traveloka => 'assets/svg/traveloka.svg';
+
   /// File path: assets/svg/user_incative.svg
   String get userIncative => 'assets/svg/user_incative.svg';
 
   /// List of all assets
-  List<String> get values => [apply, arrowRight, bookmark, bookmarked, candle, chatInactive, homeActive, jobInactive, notification, userIncative];
+  List<String> get values => [apply, arrowRight, bookmark, bookmarked, candle, chatInactive, elux, flip, gojek, homeActive, jobInactive, notification, search, tokped, traveloka, userIncative];
 }
 
 class Assets {

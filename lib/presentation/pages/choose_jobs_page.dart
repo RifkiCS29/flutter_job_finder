@@ -3,43 +3,38 @@ import 'package:flutter_svg/svg.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
 
-class ChooseJobsPage extends StatefulWidget {
+class ChooseJobsPage extends StatelessWidget {
   const ChooseJobsPage({super.key});
 
   @override
-  State<ChooseJobsPage> createState() => _ChooseJobsPageState();
-}
-
-class _ChooseJobsPageState extends State<ChooseJobsPage> {
-  List<Map<String, dynamic>> jobOptions = [
-    {
-      'name': 'Design',
-      'assets': Assets.png.designer.path,
-    },
-    {
-      'name': 'Engineer',
-      'assets': Assets.png.engineer.path,
-    },
-    {
-      'name': 'Programming',
-      'assets': Assets.png.programmer.path,
-    },
-    {
-      'name': 'Medical',
-      'assets': Assets.png.medical.path,
-    },
-    {
-      'name': 'Marketing',
-      'assets': Assets.png.marketing.path,
-    },
-    {
-      'name': 'Legal',
-      'assets': Assets.png.legal.path,
-    },
-  ];
-
-  @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> jobOptions = [
+      {
+        'name': 'Design',
+        'assets': Assets.png.designer.path,
+      },
+      {
+        'name': 'Engineer',
+        'assets': Assets.png.engineer.path,
+      },
+      {
+        'name': 'Programming',
+        'assets': Assets.png.programmer.path,
+      },
+      {
+        'name': 'Medical',
+        'assets': Assets.png.medical.path,
+      },
+      {
+        'name': 'Marketing',
+        'assets': Assets.png.marketing.path,
+      },
+      {
+        'name': 'Legal',
+        'assets': Assets.png.legal.path,
+      },
+    ];
+
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -87,7 +82,7 @@ class _ChooseJobsPageState extends State<ChooseJobsPage> {
         ),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/choose_jobs');
+            Navigator.pushNamed(context, '/home_page');
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: colorPrimary,
