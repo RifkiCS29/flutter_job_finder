@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
 
@@ -14,41 +16,41 @@ class IntroductionPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: defaultMargin * 2.5,
+            Gap(
+              defaultMargin.h * 2.5,
             ),
             Image.asset(
               Assets.png.introduction.path,
               height: MediaQuery.of(context).size.height * 0.4,
             ),
-            SizedBox(
-              height: defaultMargin * 2,
+            Gap(
+              defaultMargin.h * 2,
             ),
             RichText(
               text: TextSpan(
                 text: 'Find your ',
                 style: blackTextStyle.copyWith(
-                  fontSize: 26,
+                  fontSize: 26.sp,
                   fontWeight: bold,
                 ),
                 children: [
                   TextSpan(
                     text: 'Dream Jobs',
                     style: primaryTextStyle.copyWith(
-                      fontSize: 26,
+                      fontSize: 26.sp,
                       fontWeight: bold,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: defaultMargin * 2,
+            Gap(
+              defaultMargin.h * 2,
             ),
             Text(
               "Welcome to our Elux Job App! We're here to help you find your dream job",
               style: greyTextStyle.copyWith(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: regular,
               ),
               textAlign: TextAlign.center,
@@ -82,7 +84,7 @@ class IntroductionPage extends StatelessWidget {
                   fontWeight: bold,
                 ),
               ),
-              const SizedBox(width: 8),
+              Gap(8.w),
               SvgPicture.asset(Assets.svg.arrowRight)
             ],
           ),

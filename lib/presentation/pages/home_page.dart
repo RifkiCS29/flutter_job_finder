@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:job_finder/data/models/vacancy_model.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
@@ -85,8 +87,8 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            SizedBox(
-              height: defaultMargin * 1.5,
+            Gap(
+              defaultMargin.h * 1.5,
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -101,15 +103,15 @@ class HomePage extends StatelessWidget {
                       Text(
                         'Hi, Rifki',
                         style: blackTextStyle.copyWith(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: bold,
                         ),
                       ),
-                      const SizedBox(height: 2),
+                      Gap(2.h),
                       Text(
                         'Find Your Dream Job',
                         style: blackTextStyle.copyWith(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: bold,
                         ),
                       ),
@@ -117,8 +119,8 @@ class HomePage extends StatelessWidget {
                   ),
                   SvgPicture.asset(
                     Assets.svg.notification,
-                    width: 22,
-                    height: 22,
+                    width: 22.h,
+                    height: 22.w,
                   )
                 ],
               ),
@@ -126,11 +128,11 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(defaultMargin),
               child: SizedBox(
-                height: 42,
+                height: 38.h,
                 child: TextFormField(
                   controller: searchController,
                   style: greyTextStyle.copyWith(
-                    fontSize: 12,
+                    fontSize: 12.sp,
                   ),
                   decoration: InputDecoration(
                     fillColor: colorBlueLight,
@@ -139,28 +141,28 @@ class HomePage extends StatelessWidget {
                       vertical: 8.0,
                     ), // Adjust the height here
                     prefixIcon: Container(
-                      padding: const EdgeInsets.all(12),
-                      height: 20,
-                      width: 20,
+                      padding: const EdgeInsets.all(14),
+                      height: 20.h,
+                      width: 20.w,
                       child: SvgPicture.asset(
                         Assets.svg.search,
-                        height: 12,
-                        width: 12,
+                        height: 12.h,
+                        width: 12.w,
                       ),
                     ), // Prefix icon
                     suffixIcon: Container(
-                      padding: const EdgeInsets.all(12),
-                      height: 20,
-                      width: 20,
+                      padding: const EdgeInsets.all(14),
+                      height: 20.h,
+                      width: 20.w,
                       child: SvgPicture.asset(
                         Assets.svg.candle,
-                        height: 12,
-                        width: 12,
+                        height: 12.h,
+                        width: 12.w,
                       ),
                     ),
                     hintText: 'Search Job',
                     hintStyle: greyTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 14.sp,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -191,14 +193,14 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Latest Vacancies',
                     style: blackTextStyle.copyWith(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: bold,
                     ),
                   ),
                   Text(
                     'See All',
                     style: primaryTextStyle.copyWith(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: bold,
                     ),
                   )
@@ -206,7 +208,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 205,
+              height: 190.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal, // Set horizontal scrolling
                 itemCount: latestJobOptions.length,
@@ -219,9 +221,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(
-              height: defaultMargin,
-            ),
+            Gap(defaultMargin.h),
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: defaultMargin,
@@ -232,14 +232,14 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Recommendations',
                     style: blackTextStyle.copyWith(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: bold,
                     ),
                   ),
                   Text(
                     'See All',
                     style: primaryTextStyle.copyWith(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: bold,
                     ),
                   )
@@ -324,10 +324,10 @@ class _LatestJobItemState extends State<LatestJobItem> {
                 children: [
                   Image.asset(
                     widget.vacancy.assets ?? Assets.png.flip.path,
-                    height: 60,
-                    width: 60,
+                    height: 54.h,
+                    width: 54.w,
                   ),
-                  const SizedBox(width: 8),
+                  Gap(8.w),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.365,
                     child: Column(
@@ -336,18 +336,18 @@ class _LatestJobItemState extends State<LatestJobItem> {
                         Text(
                           widget.vacancy.name ?? 'Vacancy',
                           style: blackTextStyle.copyWith(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: semiBold,
                               overflow: TextOverflow.ellipsis),
                           maxLines: 1,
                         ),
-                        const SizedBox(
-                          height: 4,
+                        Gap(
+                          4.h,
                         ),
                         Text(
                           widget.vacancy.location ?? 'Location',
                           style: greyTextStyle.copyWith(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: regular,
                               overflow: TextOverflow.ellipsis),
                           maxLines: 1,
@@ -357,8 +357,8 @@ class _LatestJobItemState extends State<LatestJobItem> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 10,
+              Gap(
+                10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -377,13 +377,13 @@ class _LatestJobItemState extends State<LatestJobItem> {
                     child: Text(
                       widget.vacancy.workType ?? 'Work Type',
                       style: primaryTextStyle.copyWith(
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         fontWeight: semiBold,
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 8,
+                  Gap(
+                    8.w,
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -399,21 +399,21 @@ class _LatestJobItemState extends State<LatestJobItem> {
                     child: Text(
                       widget.vacancy.level ?? 'Level',
                       style: primaryTextStyle.copyWith(
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         fontWeight: semiBold,
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
+              Gap(
+                10.h,
               ),
               Row(
                 children: [
                   SvgPicture.asset(
                     Assets.svg.clock,
-                    height: 14,
+                    height: 14.h,
                   ),
                   const SizedBox(
                     width: 8,
@@ -421,17 +421,17 @@ class _LatestJobItemState extends State<LatestJobItem> {
                   Text(
                     widget.vacancy.postedAt ?? 'Posted At',
                     style: greyTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: regular,
                     ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 8,
+              Gap(
+                8.h,
               ),
               SizedBox(
-                height: 32,
+                height: 32.h,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -455,7 +455,7 @@ class _LatestJobItemState extends State<LatestJobItem> {
                           fontWeight: bold,
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const Gap(8),
                       SvgPicture.asset(Assets.svg.apply)
                     ],
                   ),
@@ -479,8 +479,8 @@ class _LatestJobItemState extends State<LatestJobItem> {
               isBookmarked == true
                   ? Assets.svg.bookmarked
                   : Assets.svg.bookmark,
-              height: 18,
-              width: 18,
+              height: 18.h,
+              width: 18.w,
             ),
           ),
         ),
@@ -544,10 +544,10 @@ class _RecommendationJobItemState extends State<RecommendationJobItem> {
                 children: [
                   Image.asset(
                     widget.vacancy.assets ?? Assets.png.flip.path,
-                    height: 64,
-                    width: 64,
+                    height: 64.h,
+                    width: 64.w,
                   ),
-                  const SizedBox(width: 8),
+                  Gap(8.w),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.575,
                     child: Column(
@@ -556,24 +556,24 @@ class _RecommendationJobItemState extends State<RecommendationJobItem> {
                         Text(
                           widget.vacancy.name ?? 'Vacancy',
                           style: blackTextStyle.copyWith(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: semiBold,
                               overflow: TextOverflow.ellipsis),
                           maxLines: 1,
                         ),
-                        const SizedBox(
-                          height: 4,
+                        Gap(
+                          4.h,
                         ),
                         Text(
                           widget.vacancy.location ?? 'Location',
                           style: greyTextStyle.copyWith(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: regular,
                               overflow: TextOverflow.ellipsis),
                           maxLines: 1,
                         ),
-                        const SizedBox(
-                          height: 8,
+                        Gap(
+                          8.h,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -592,13 +592,13 @@ class _RecommendationJobItemState extends State<RecommendationJobItem> {
                               child: Text(
                                 widget.vacancy.workType ?? 'Work Type',
                                 style: primaryTextStyle.copyWith(
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: semiBold,
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              width: 8,
+                            Gap(
+                              8.w,
                             ),
                             Container(
                               padding: const EdgeInsets.symmetric(
@@ -614,7 +614,7 @@ class _RecommendationJobItemState extends State<RecommendationJobItem> {
                               child: Text(
                                 widget.vacancy.level ?? 'Level',
                                 style: primaryTextStyle.copyWith(
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: semiBold,
                                 ),
                               ),

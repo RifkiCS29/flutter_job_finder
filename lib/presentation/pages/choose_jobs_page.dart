@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:job_finder/data/models/job_model.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
@@ -40,8 +42,8 @@ class ChooseJobsPage extends StatelessWidget {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
-            height: defaultMargin * 2.5,
+          Gap(
+            defaultMargin.h * 2.5,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +51,7 @@ class ChooseJobsPage extends StatelessWidget {
               Text(
                 'Select Your Job\nCategory',
                 style: blackTextStyle.copyWith(
-                  fontSize: 22,
+                  fontSize: 22.sp,
                   fontWeight: bold,
                 ),
                 textAlign: TextAlign.center,
@@ -104,7 +106,7 @@ class ChooseJobsPage extends StatelessWidget {
                   fontWeight: bold,
                 ),
               ),
-              const SizedBox(width: 8),
+              Gap(8.w),
               SvgPicture.asset(Assets.svg.arrowRight)
             ],
           ),
@@ -166,15 +168,13 @@ class _JobOptionState extends State<JobOption> {
                 children: [
                   Image.asset(
                     widget.job.assets ?? Assets.png.designer.path,
-                    height: 40,
+                    height: 40.h,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  Gap(10.h),
                   Text(
                     widget.job.name ?? 'Job',
                     style: blackTextStyle.copyWith(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: semiBold,
                     ),
                   ),
