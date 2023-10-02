@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_finder/presentation/pages/pages.dart';
+import 'package:job_finder/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
@@ -20,12 +20,9 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const IntroductionPage(),
-          '/choose_jobs': (context) => const ChooseJobsPage(),
-          '/home_page': (context) => const HomePage(),
-        },
+        routerDelegate: AppRouter().router.routerDelegate,
+        routeInformationProvider: AppRouter().router.routeInformationProvider,
+        routeInformationParser: AppRouter().router.routeInformationParser,
       ),
     );
   }

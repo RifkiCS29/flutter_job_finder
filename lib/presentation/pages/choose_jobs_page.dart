@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:job_finder/data/models/job_model.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
@@ -84,7 +85,7 @@ class ChooseJobsPage extends StatelessWidget {
         ),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/home_page');
+            context.push('/home');
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: colorPrimary,

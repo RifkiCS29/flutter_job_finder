@@ -61,6 +61,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/arrow_right.svg
   String get arrowRight => 'assets/svg/arrow_right.svg';
 
+  /// File path: assets/svg/back.svg
+  String get back => 'assets/svg/back.svg';
+
   /// File path: assets/svg/bookmark.svg
   String get bookmark => 'assets/svg/bookmark.svg';
 
@@ -91,8 +94,11 @@ class $AssetsSvgGen {
   /// File path: assets/svg/user_incative.svg
   String get userIncative => 'assets/svg/user_incative.svg';
 
+  /// File path: assets/svg/verified.svg
+  String get verified => 'assets/svg/verified.svg';
+
   /// List of all assets
-  List<String> get values => [apply, arrowRight, bookmark, bookmarked, candle, chatInactive, clock, homeActive, jobInactive, notification, search, userIncative];
+  List<String> get values => [apply, arrowRight, back, bookmark, bookmarked, candle, chatInactive, clock, homeActive, jobInactive, notification, search, userIncative, verified];
 }
 
 class Assets {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:job_finder/utils/app_theme.dart';
 import 'package:job_finder/utils/assets.gen.dart';
 
@@ -62,7 +63,7 @@ class IntroductionPage extends StatelessWidget {
         padding: EdgeInsets.all(defaultMargin),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/choose_jobs');
+            context.push('/choose_jobs');
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: colorPrimary,
