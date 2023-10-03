@@ -59,12 +59,15 @@ class HomePage extends StatelessWidget {
                     Stack(
                       alignment: AlignmentDirectional.topEnd,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(4.h),
-                          child: SvgPicture.asset(
-                            Assets.svg.notification,
-                            width: 24.h,
-                            height: 24.w,
+                        GestureDetector(
+                          onTap: () => context.push('/notifications'),
+                          child: Padding(
+                            padding: EdgeInsets.all(4.h),
+                            child: SvgPicture.asset(
+                              Assets.svg.notification,
+                              width: 24.h,
+                              height: 24.w,
+                            ),
                           ),
                         ),
                         Container(

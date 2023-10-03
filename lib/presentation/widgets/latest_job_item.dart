@@ -196,6 +196,7 @@ class _LatestJobItemState extends State<LatestJobItem> {
                           'Apply',
                           style: whiteTextStyle.copyWith(
                             fontWeight: bold,
+                            fontSize: 12.sp,
                           ),
                         ),
                         Gap(8.w),

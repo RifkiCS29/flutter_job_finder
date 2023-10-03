@@ -64,7 +64,9 @@ class _DescriptionListState extends State<DescriptionList> {
               },
               child: Text(
                 isExpanded ? 'Show Less' : 'Read More',
-                style: primaryTextStyle,
+                style: primaryTextStyle.copyWith(
+                  fontSize: 11.sp,
+                ),
               ),
             ),
           ),

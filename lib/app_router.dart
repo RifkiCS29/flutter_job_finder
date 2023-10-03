@@ -23,6 +23,10 @@ class AppRouter {
           data: state.extra as VacancyModel,
         ),
       ),
+      GoRoute(
+        path: '/notifications',
+        builder: (context, state) => const NotificationsPage(),
+      ),
     ],
   );
 
