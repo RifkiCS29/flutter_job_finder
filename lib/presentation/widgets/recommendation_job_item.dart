@@ -67,7 +67,7 @@ class _RecommendationJobItemState extends State<RecommendationJobItem> {
                     ),
                     Gap(8.w),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.575,
+                      width: MediaQuery.of(context).size.width * 0.525,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

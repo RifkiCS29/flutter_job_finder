@@ -29,7 +29,7 @@ class DetailVacancyPage extends StatelessWidget {
           onTap: () => context.pop(),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 12.w,
+              horizontal: 16.w,
             ),
             child: SvgPicture.asset(
               Assets.svg.back,

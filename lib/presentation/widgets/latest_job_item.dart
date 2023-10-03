@@ -39,7 +39,10 @@ class _LatestJobItemState extends State<LatestJobItem> {
               widget.index == widget.size - 1 ? defaultMargin : 8,
               8,
             ),
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.symmetric(
+              horizontal: 12.w,
+              vertical: 12.h,
+            ),
             decoration: BoxDecoration(
               color: colorWhite,
               borderRadius: BorderRadius.circular(defaultRadius),
@@ -56,6 +59,7 @@ class _LatestJobItemState extends State<LatestJobItem> {
               ],
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -69,6 +73,7 @@ class _LatestJobItemState extends State<LatestJobItem> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.365,
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -175,8 +180,8 @@ class _LatestJobItemState extends State<LatestJobItem> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colorPrimary,
                       foregroundColor: colorPurpleLight,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 4,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 4.h,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
@@ -193,7 +198,7 @@ class _LatestJobItemState extends State<LatestJobItem> {
                             fontWeight: bold,
                           ),
                         ),
-                        const Gap(8),
+                        Gap(8.w),
                         SvgPicture.asset(Assets.svg.apply)
                       ],
                     ),
